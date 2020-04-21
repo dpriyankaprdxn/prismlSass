@@ -1,0 +1,116 @@
+.contact {
+  padding: 60px 0;
+  border-bottom : 1px solid $light-grey;
+
+  .wrapper {
+    @include flex;
+    @include justify-content(space-between);
+
+    @include breakpoint('ipad') { @include flex-direction(column); }
+  }
+
+  &__form {
+    border-right : 1px solid $light-grey;
+    @include flex-basis(50%);
+
+    form {
+      padding : 20px 0;
+      @include flex;
+      @include flex-wrap(wrap);
+
+      @include breakpoint('ipad') { padding: 20px 1%; }
+    }
+
+    .button { 
+      background: $white;
+      
+      @include reverse-breakpoint('notebook') {
+        &:hover { background: $heading-color; }
+      }  
+    }
+
+    @include breakpoint('ipad') { 
+      margin-bottom: 15px;
+      border-right: none;
+      border-bottom: 1px solid $light-grey;
+    }
+  }
+
+  ul {
+    @include flex-basis(44%);
+  }
+
+  li { 
+    margin-bottom: 18px;
+    display: block;
+    font-size: $thirteen;
+  }
+
+  a { 
+    color:  $grey-white; 
+
+      &:before {
+      margin-right: 15px;
+      color: $right-sign;
+      font-family: $font-awesome;
+    }
+    @include reverse-breakpoint('notebook') {
+      &:hover { 
+        color: $right-sign; 
+        
+        &::before { color : $grey-white; }
+      }
+    }
+  }
+}
+
+.facebook {
+  &:before { content: "\f09a"; }
+}
+
+.twitter { 
+  &:before { content: "\f099"; }
+}
+
+.instagram { 
+  &:before { content: "\f16d"; }
+}
+
+.mail { 
+  &:before { content: "\f0e0"; }
+}
+
+.address {
+  &:before { content: "\f015"; }
+}
+
+.form-group {
+  @include flex-basis(50%);
+
+  input {
+    @include vendor(box-sizing,border-box);
+    width: 90%;
+    padding: 8px 5%;
+    border : 1px solid $grey;
+
+    @include breakpoint('iphone') {
+      width: 95%;
+      margin-top: 25px;
+      @include flex-basis(100%); 
+    }
+  }
+
+  textarea {
+    @include vendor(box-sizing,border-box);
+    width: 95%;
+    padding:  8px 5% 60px;
+    border : 1px solid $grey;
+  }
+
+  &:nth-child(3) {
+    margin-top: 25px;
+    @include flex-basis(100%);
+  }
+
+  @include breakpoint('iphone') { @include flex-basis(100%); }
+}

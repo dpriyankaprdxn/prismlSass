@@ -1,0 +1,41 @@
+.information {
+  padding : 60px 0;
+  background: $light-white;
+
+  .wrapper {
+    > div { text-align: center;    }
+  }
+
+  li {
+    margin-bottom: 30px;
+    background: $white;
+    @include flex;
+    @include align-item(center);
+    @include justify-content(space-between);
+
+    @include breakpoint('ipad') {
+      padding: 15px 0;
+      @include flex-direction(column);
+    }
+  }
+
+  &__content { 
+    padding: 0 5%;
+    @include flex-basis(47%); 
+
+    @include breakpoint('ipad') {
+      padding: 15px 5%;
+      text-align: center;
+    }
+  }
+
+  @at-root figure {
+    overflow: hidden; 
+
+    @include reverse-breakpoint('notebook') {
+    a {
+        &:hover { @include vendor(transform,scale(1.5)); }
+      }
+    }
+  }
+}

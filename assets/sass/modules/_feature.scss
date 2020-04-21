@@ -1,0 +1,46 @@
+.feature {
+  border-bottom: 1px solid $grey;
+  .wrapper {
+    padding: 60px 0;
+    @include flex; 
+    @include justify-content(space-between);
+
+    @include breakpoint('phone') {
+      @include flex-direction(column);
+    }
+  }
+
+  &__info {  
+    @include vendor(box-sizing,border-box);
+    padding: 0 6% 10px 0;
+    border-right: 1px solid $light-grey;
+    @include flex-basis(50%); 
+
+    p { font-size: $thirteen; }
+
+    @include breakpoint('phone') {
+      padding-bottom: 15px;;
+      border-right: none;
+      border-bottom: 1px solid $light-grey;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {  
+    @include flex-basis(44%); 
+
+    li {
+      margin-bottom: 18px;
+      display: block;
+      color: $grey-white;
+      font-size: $thirteen;
+
+      &:before {
+        content: "\f00c";
+        margin-right: 2%;
+        color: $right-sign;
+        font-family: $font-awesome;
+      }
+    }
+  }
+}

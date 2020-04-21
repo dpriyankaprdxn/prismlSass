@@ -1,0 +1,42 @@
+.banner {
+  @include linear-gradient(right,$primary,$light-primary);
+  .wrapper {
+    padding : 182px 0 82px;
+    @include flex;
+    @include justify-content(space-between);
+
+    @include breakpoint('phone') {
+      @include flex-direction(column);
+      text-align: center;
+    }
+  }
+
+  .banner__text {
+    @include flex-basis(44%);
+
+    p { 
+      color : $light-grey; 
+      font-size: $fiftheen;
+    }
+
+    a {
+      @include vendor(box-sizing,border-box);
+      padding: 12px 32px;
+      border : 1px solid $transparent;
+      @include vendor(border-radius,15px);
+      margin-top: 12px;
+      background: $green-button;
+      color : $white;
+      font-size: $eleven;
+      text-transform: uppercase;
+
+      @include reverse-breakpoint('notebook') {
+        &:hover {
+          border : 1px solid $green-button;
+          background: $white;
+          color : $green-button;
+        }
+      }
+    }
+  }
+}
